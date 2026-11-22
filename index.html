@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Santos Design Portfólio</title>
+<meta name="description" content="Portfólio de design de Santos: interfaces de apps, criativos para redes sociais e protótipos.">
+<meta name="theme-color" content="#0b0e13">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+/* VOICE  portfólio pessoal, escuro e técnico como o Santos pediu, com acabamento de estúdio
+   IDEA   bancada de protótipos: telas de apps reais dele dispostas como peças numa mesa escura
+   PICTURE três celulares desenhados em CSS com as telas dos apps dele, sobrepostos
+   COLOUR fundo grafite #0b0e13, tinta #eceef1, brasa #ff6b35 como acento, aço #1b222c em painéis
+   TYPE   Space Grotesk para títulos e texto, JetBrains Mono só em etiquetas curtas
+   LAYOUT laptop: texto à esquerda, celulares à direita; celular: título, celulares, botões */
+:root{color-scheme:dark;--bg:#0b0e13;--ink:#eceef1;--mut:#9aa3ae;--panel:#131820;--line:#232b36;--acc:#ff6b35;--acc2:#ffb08a;--ok:#4fd18b}
+*{box-sizing:border-box;min-width:0}
+html{scroll-behavior:smooth;scroll-padding-top:72px}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 "Space Grotesk",system-ui,sans-serif;overflow-x:clip}
+a{color:inherit}
+img{max-width:100%}
+.wrap{max-width:1240px;margin:0 auto}
+.band{padding-block:clamp(40px,6vw,88px);padding-left:max(5vw,16px);padding-right:max(5vw,16px)}
+.tag{font:600 12px/1 "JetBrains Mono",monospace;color:var(--acc2)}
+h1,h2,h3{line-height:1.05;letter-spacing:-.02em;margin:0;text-wrap:balance}
+h1{font-size:clamp(38px,6vw,68px);font-weight:700}
+h2{font-size:clamp(30px,4vw,46px);font-weight:700}
+h3{font-size:20px;font-weight:700}
+p{margin:0}
+.lead{font-size:18px;color:var(--mut);max-width:34em}
+.btn{display:inline-flex;align-items:center;gap:8px;min-height:46px;padding:0 20px;border-radius:12px;border:1px solid var(--line);background:var(--panel);color:var(--ink);font:500 15px "Space Grotesk",sans-serif;text-decoration:none;cursor:pointer}
+.btn:hover{border-color:var(--acc)}
+.btn.main{background:var(--acc);border-color:var(--acc);color:#140804}
+.btn.main:hover{background:#ff8352}
+:focus-visible{outline:2px solid var(--acc2);outline-offset:3px}
+/* topo */
+header{position:sticky;top:0;z-index:20;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+header .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:12px max(5vw,16px);flex-wrap:wrap}
+.logo{display:flex;align-items:center;gap:10px;font-weight:700;text-decoration:none;font-size:18px}
+.logo b{display:grid;place-items:center;width:34px;height:34px;border-radius:10px;background:var(--acc);color:#140804;font-size:17px}
+nav{display:flex;gap:4px;flex-wrap:wrap}
+nav a{padding:8px 12px;border-radius:10px;text-decoration:none;color:var(--mut);font-size:15px}
+nav a:hover{color:var(--ink);background:var(--panel)}
+/* hero */
+.hero{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);gap:clamp(24px,4vw,56px);align-items:center}
+.hero .txt{display:grid;gap:22px}
+.btns{display:flex;flex-wrap:wrap;gap:10px}
+.facts{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin-top:6px}
+.facts div{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:14px}
+.facts strong{display:block;font-size:22px}
+.facts span{font-size:13px;color:var(--mut)}
+.bench{position:relative;height:clamp(380px,44vw,540px);border-radius:28px;background:radial-gradient(120% 90% at 70% 20%,#1d2530,#0f1319 70%);border:1px solid var(--line);overflow:hidden}
+.bench::after{content:"";position:absolute;left:8%;right:8%;bottom:7%;height:22px;border-radius:50%;background:#000;opacity:.45;filter:blur(14px)}
+.bench .phone{position:absolute;bottom:9%}
+.bench .p1{left:6%;transform:rotate(-7deg);z-index:1}
+.bench .p2{left:50%;translate:-50% 0;z-index:3;bottom:13%}
+.bench .p3{right:6%;transform:rotate(6deg);z-index:2}
+/* celular */
+.phone{width:clamp(150px,15vw,200px);aspect-ratio:9/18.5;border-radius:28px;background:#05070a;padding:7px;box-shadow:inset 0 0 0 1px #2c3542,0 18px 30px -14px #000}
+.scr{height:100%;border-radius:22px;background:#f6f4f0;color:#15181d;overflow:hidden;display:flex;flex-direction:column;font-size:11px;line-height:1.3}
+.sb{display:flex;justify-content:space-between;padding:7px 12px 4px;font:600 9px "JetBrains Mono",monospace}
+.hd{padding:6px 12px 8px}
+.hd b{display:block;font-size:14px}
+.hd small{color:#6b7280;font-size:9.5px}
+.rows{padding:0 10px;display:grid;gap:5px}
+.row{display:flex;justify-content:space-between;gap:6px;background:#fff;border-radius:8px;padding:6px 8px;box-shadow:0 1px 0 #e6e2da}
+.row span:last-child{white-space:nowrap;font-weight:600}
+.foot{margin-top:auto;padding:10px}
+.pill{display:block;text-align:center;border-radius:10px;padding:8px;font-weight:700;color:#fff}
+.bar{height:6px;border-radius:4px;background:#e4e0d8;overflow:hidden;margin-top:4px}
+.bar i{display:block;height:100%}
+/* sobre */
+.two{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:clamp(24px,5vw,72px);align-items:start}
+.pillars{display:grid;gap:12px}
+.pillars div{border-top:1px solid var(--line);padding-top:14px;display:grid;gap:4px}
+.pillars p{color:var(--mut)}
+.steps{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin-top:clamp(28px,4vw,48px)}
+.steps div{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:18px;display:grid;gap:6px;align-content:start}
+.steps b{font-size:17px}
+.steps p{color:var(--mut);font-size:15px}
+/* letreiro */
+.ticker{border-block:1px solid var(--line);overflow:hidden;background:#0e1218}
+.ticker div{display:flex;gap:36px;width:max-content;padding:14px 0;animation:run 38s linear infinite;color:var(--mut);font-size:15px}
+.ticker span::before{content:"◆";color:var(--acc);margin-right:14px;font-size:10px;vertical-align:2px}
+@keyframes run{to{transform:translateX(-50%)}}
+@media (prefers-reduced-motion:reduce){.ticker div{animation:none;flex-wrap:wrap;width:auto;padding-inline:16px}html{scroll-behavior:auto}}
+/* projetos */
+.headrow{display:flex;justify-content:space-between;align-items:end;gap:16px;flex-wrap:wrap;margin-bottom:24px}
+.filters{display:flex;gap:6px;flex-wrap:wrap}
+.filters button{min-height:44px;padding:0 16px;border-radius:999px;border:1px solid var(--line);background:transparent;color:var(--mut);font:500 15px "Space Grotesk",sans-serif;cursor:pointer}
+.filters button[aria-pressed=true]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,340px),1fr));gap:16px}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:22px;overflow:hidden;display:flex;flex-direction:column}
+.card[hidden]{display:none}
+.stage{display:grid;place-items:center;padding:26px 0 0;height:300px;overflow:hidden;background:linear-gradient(#18202a,#121820)}
+.stage .phone{width:170px;translate:0 26px}
+.body{padding:20px;display:grid;gap:10px;flex:1;align-content:start}
+.meta{display:flex;justify-content:space-between;gap:8px;color:var(--mut);font-size:13px}
+.body>p{color:var(--mut)}
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.chips span{font-size:13px;padding:4px 10px;border-radius:999px;background:#1c2430;color:#c9d0d8}
+details{border-top:1px solid var(--line);padding-top:10px}
+summary{cursor:pointer;color:var(--acc2);font-weight:500;min-height:32px;display:flex;align-items:center}
+details ul{margin:6px 0 0;padding-left:18px;color:var(--mut)}
+details li{margin-bottom:4px}
+/* criativos */
+.gal{columns:3 260px;column-gap:16px}
+.fig{display:block;width:100%;margin:0 0 16px;padding:0;border:1px solid var(--line);border-radius:18px;overflow:hidden;background:var(--panel);cursor:zoom-in;position:relative;break-inside:avoid;color:inherit;font:inherit;text-align:left}
+.fig[hidden]{display:none}
+.fig img{display:block;width:100%;height:auto;transition:transform .35s}
+.fig:hover img{transform:scale(1.03)}
+.fig figcaption{position:absolute;left:0;right:0;bottom:0;padding:34px 14px 12px;background:linear-gradient(transparent,#000c);display:grid;gap:2px;opacity:0;transition:opacity .25s}
+.fig:hover figcaption,.fig:focus-visible figcaption{opacity:1}
+.fig figcaption b{font-size:15px}.fig figcaption span{font-size:13px;color:#cfd5dc}
+@media(hover:none){.fig figcaption{opacity:1}}
+dialog#lb{border:0;padding:0;background:#05070aee;color:var(--ink);max-width:100vw;max-height:100dvh;width:100%;height:100dvh;margin:0}
+dialog#lb::backdrop{background:#000}
+.lbin{height:100%;display:grid;grid-template-rows:minmax(0,1fr) auto;gap:10px;padding:56px 16px 16px;justify-items:center}
+.lbin img{max-width:100%;max-height:100%;object-fit:contain;border-radius:12px}
+.lbin p{text-align:center;color:var(--mut)}.lbin p b{color:var(--ink);display:block}
+.lbb{position:absolute;min-width:48px;min-height:48px;border-radius:999px;border:1px solid var(--line);background:var(--panel);color:var(--ink);font:500 20px "Space Grotesk",sans-serif;cursor:pointer}
+.lbb.x{top:12px;right:12px}.lbb.pv{left:12px;top:50%}.lbb.nx{right:12px;top:50%}
+/* habilidades */
+.skills{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 48px}
+.skill{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:6px 16px;padding:18px 0;border-bottom:1px solid var(--line)}
+.skill p{grid-column:1/-1;color:var(--mut);font-size:15px}
+.skill .chips{grid-column:1/-1}
+/* contato */
+.contact{background:var(--acc);color:#160904}
+.contact .wrap{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:clamp(24px,5vw,64px);align-items:center}
+.contact .lead{color:#3a1607}
+.contact .btn{background:#160904;color:#fff;border-color:#160904}
+.contact .btn:hover{border-color:#fff}
+.clist{display:grid;gap:10px}
+.clist div{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;background:#ffffff2e;border-radius:14px;padding:12px 14px}
+.clist small{display:block;font-size:13px;opacity:.75}
+.clist strong{overflow-wrap:anywhere}
+.copy{min-height:44px;padding:0 14px;border-radius:10px;border:0;background:#160904;color:#fff;font:500 14px "Space Grotesk",sans-serif;cursor:pointer}
+.note{font-size:13px;opacity:.8}
+footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;color:var(--mut);font-size:14px}
+footer nav a{padding:6px 8px}
+@media(max-width:900px){.hero,.two,.contact .wrap{grid-template-columns:minmax(0,1fr)}.steps{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:600px){nav{width:100%;overflow-x:auto;flex-wrap:nowrap}nav a{flex:none}.facts{grid-template-columns:minmax(0,1fr)}.facts div{display:flex;justify-content:space-between;align-items:baseline;gap:8px}.steps,.skills{grid-template-columns:minmax(0,1fr)}.bench{height:360px}.phone{width:136px}.bench .p1{left:0}.bench .p3{right:0}}
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <a class="logo" href="#inicio"><b>S</b>Santos Design</a>
+    <nav aria-label="Seções">
+      <a href="#sobre">Sobre</a><a href="#projetos">Projetos</a><a href="#criativos">Criativos</a><a href="#habilidades">Habilidades</a><a href="#contato">Contato</a>
+    </nav>
+  </div>
+</header>
+
+<main id="inicio">
+<section class="band">
+  <div class="wrap hero">
+    <div class="txt">
+      <span class="tag">Design de interfaces · Valparaíso de Goiás</span>
+      <h1>Apps que resolvem o dia a dia de quem trabalha de verdade.</h1>
+      <p class="lead">Sou o Santos, tenho 21 anos e desenho interfaces de aplicativos, do papel ao protótipo funcionando, usando inteligência artificial para tirar ideias do lugar rápido.</p>
+      <div class="btns">
+        <a class="btn main" href="#projetos">Ver projetos</a>
+        <a class="btn" href="#contato">Falar comigo</a>
+      </div>
+      <div class="facts">
+        <div><strong>4</strong><span>projetos de apps</span></div>
+        <div><strong>UI + IA</strong><span>protótipos funcionais</span></div>
+        <div><strong>10</strong><span>criativos publicados</span></div>
+      </div>
+    </div>
+    <div class="bench" id="bench" aria-label="Telas de três aplicativos desenhados por Santos"></div>
+  </div>
+</section>
+
+<div class="ticker" aria-hidden="true"><div id="tick"></div></div>
+
+<section class="band" id="sobre">
+  <div class="wrap">
+    <div class="two">
+      <div style="display:grid;gap:16px">
+        <span class="tag">Sobre</span>
+        <h2>Design pensado para quem usa com pressa.</h2>
+      </div>
+      <div style="display:grid;gap:22px">
+        <p class="lead">Trabalho num espetinho onde o atendimento é muito rápido, e foi ali que aprendi o que mais importa numa tela: o garçom precisa anotar o pedido em segundos, sem pensar. Levo essa mesma lógica para todos os meus projetos.</p>
+        <div class="pillars">
+          <div><h3>Interfaces de apps</h3><p>Telas claras, botões grandes e o mínimo de passos para chegar no que importa.</p></div>
+          <div><h3>Protótipos com IA</h3><p>Uso Claude e ChatGPT para transformar uma ideia em um app que já roda no celular.</p></div>
+          <div><h3>Design gráfico</h3><p>Criativos para redes sociais, igrejas, eventos e marcas, do cartaz ao story.</p></div>
+        </div>
+      </div>
+    </div>
+    <div class="steps">
+      <div><span class="tag">Passo 1</span><b>Entender a rotina</b><p>Ver como a pessoa trabalha hoje e onde ela perde tempo.</p></div>
+      <div><span class="tag">Passo 2</span><b>Desenhar o fluxo</b><p>Definir as telas e o caminho mais curto até o resultado.</p></div>
+      <div><span class="tag">Passo 3</span><b>Prototipar</b><p>Montar uma versão que funciona de verdade, rápido, com IA.</p></div>
+      <div><span class="tag">Passo 4</span><b>Testar no uso real</b><p>Colocar na mão de quem vai usar e ajustar o que travar.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="band" id="projetos" style="background:#0e1218;border-block:1px solid var(--line)">
+  <div class="wrap">
+    <div class="headrow">
+      <div style="display:grid;gap:12px"><span class="tag">Projetos</span><h2>O que eu estou criando</h2></div>
+      <div class="filters" role="group" aria-label="Filtrar projetos">
+        <button type="button" data-f="todos" aria-pressed="true">Todos</button>
+        <button type="button" data-f="negocio" aria-pressed="false">Negócios</button>
+        <button type="button" data-f="pessoal" aria-pressed="false">Uso pessoal</button>
+      </div>
+    </div>
+    <div class="grid" id="grid"></div>
+  </div>
+</section>
+
+<section class="band" id="criativos">
+  <div class="wrap">
+    <div class="headrow">
+      <div style="display:grid;gap:12px"><span class="tag">Criativos</span><h2>Artes que eu desenhei</h2></div>
+      <div class="filters" id="cf" role="group" aria-label="Filtrar criativos">
+        <button type="button" data-f="todos" aria-pressed="true">Todos</button>
+        <button type="button" data-f="igreja" aria-pressed="false">Igreja</button>
+        <button type="button" data-f="eventos" aria-pressed="false">Eventos</button>
+        <button type="button" data-f="manip" aria-pressed="false">Manipulação</button>
+        <button type="button" data-f="produto" aria-pressed="false">Produto</button>
+      </div>
+    </div>
+    <div class="gal" id="gal"></div>
+  </div>
+</section>
+<dialog id="lb" aria-label="Criativo ampliado">
+  <button class="lbb x" id="lbx" type="button" aria-label="Fechar">✕</button>
+  <button class="lbb pv" id="lbp" type="button" aria-label="Anterior">‹</button>
+  <button class="lbb nx" id="lbn" type="button" aria-label="Próximo">›</button>
+  <div class="lbin"><img id="lbi" alt=""><p><b id="lbt"></b><span id="lbs"></span></p></div>
+</dialog>
+
+<section class="band" id="habilidades">
+  <div class="wrap">
+    <div style="display:grid;gap:12px;margin-bottom:12px"><span class="tag">Habilidades</span><h2>Com o que eu trabalho</h2></div>
+    <div class="skills" id="skills"></div>
+  </div>
+</section>
+
+<section class="band contact" id="contato">
+  <div class="wrap">
+    <div style="display:grid;gap:18px">
+      <h2>Tem uma ideia de app ou um negócio que precisa de uma tela melhor?</h2>
+      <p class="lead">Me chama. Respondo rápido e a gente vê juntos o que dá pra fazer.</p>
+      <div class="btns">
+        <a class="btn" href="https://wa.me/5561993189339" target="_blank" rel="noopener">WhatsApp</a>
+      </div>
+    </div>
+    <div class="clist">
+      <div><span><small>E-mail</small><strong id="mail">osasntosdsg@gmail.com</strong></span><button class="copy" id="copy" type="button">Copiar</button></div>
+      <div><span><small>WhatsApp</small><strong>(61) 99318-9339</strong></span></div>
+      <div><span><small>Cidade</small><strong>Valparaíso de Goiás, GO</strong></span></div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="band" style="padding-block:28px">
+  <div class="wrap">
+    <span>© 2026 Santos Design · Valparaíso de Goiás, GO</span>
+    <nav aria-label="Rodapé"><a href="#sobre">Sobre</a><a href="#projetos">Projetos</a><a href="#criativos">Criativos</a><a href="#contato">Contato</a></nav>
+  </div>
+</footer>
+
+<script>
+{
+const ph = s => `<div class="phone"><div class="scr"><div class="sb"><span>19:42</span><span>●●● 5G</span></div>${s}</div></div>`;
+const bar = (p,c) => `<div class="bar"><i style="width:${p}%;background:${c}"></i></div>`;
+
+const screens = {
+  espeto: ph(`<div class="hd"><small>Espetinho No Ponto</small><b>Mesa 4 · Comanda</b></div>
+    <div class="rows">${[["2× Espeto de carne","R$ 16"],["1× Espeto de frango","R$ 7"],["1× Jantinha","R$ 22"],["2× Refrigerante","R$ 12"]].map(r=>`<div class="row"><span>${r[0]}</span><span>${r[1]}</span></div>`).join('')}
+    <div class="row" style="background:#fff3ec"><span>→ Churrasqueira</span><span style="color:#c2410c">enviado</span></div></div>
+    <div class="foot"><span class="pill" style="background:#ff6b35">Fechar conta · R$ 57</span></div>`),
+  dinheiro: ph(`<div class="hd"><small>Meu Dinheiro</small><b>Saldo do mês</b></div>
+    <div style="padding:0 12px 8px;font-size:22px;font-weight:700">R$ 1.240</div>
+    <div class="rows">${[["Mercado",62,"#16a34a"],["Transporte",35,"#2563eb"],["Lazer",48,"#f59e0b"],["Contas",80,"#ef4444"]].map(r=>`<div class="row" style="display:block"><span>${r[0]}</span>${bar(r[1],r[2])}</div>`).join('')}</div>
+    <div class="foot"><span class="pill" style="background:#15181d">+ Novo gasto</span></div>`),
+  sistema: ph(`<div style="flex:1;display:flex;flex-direction:column;background:#0a1220;color:#d6e6ff">
+    <div class="hd"><small style="color:#6ea8ff">[ O SISTEMA ]</small><b>Missão diária</b></div>
+    <div class="rows">${[["Flexões","20/20",100],["Abdominais","15/20",75],["Polichinelos","20/20",100]].map(r=>`<div class="row" style="display:block;background:#11213a;box-shadow:none;color:#d6e6ff"><span style="display:flex;justify-content:space-between"><span>${r[0]}</span><span>${r[1]}</span></span><div class="bar" style="background:#1d3256"><i style="width:${r[2]}%;background:#4ea1ff"></i></div></div>`).join('')}</div>
+    <div class="foot"><span class="pill" style="background:#1e4fd8">Rank E · faltam 5</span></div></div>`),
+  perfil: ph(`<div class="hd" style="display:flex;gap:8px;align-items:center"><span style="width:38px;height:38px;border-radius:50%;background:conic-gradient(#ff6b35,#c026d3,#ff6b35);padding:2px;display:block"><span style="display:block;width:100%;height:100%;border-radius:50%;background:#e9e4dc;border:2px solid #fff"></span></span><span><b style="font-size:12px">@cliente.loja</b><small>Bio e link sugeridos</small></span></div>
+    <div style="display:flex;gap:4px;padding:0 10px 8px"><span class="pill" style="background:#15181d;flex:1;padding:5px">Original</span><span class="pill" style="background:#ff6b35;flex:1;padding:5px">Resultado</span></div>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:3px;padding:0 10px">${["#f2b48f","#9cc5b0","#e8d27c","#c9b8e8","#f29b9b","#a8c6e8"].map(c=>`<span style="aspect-ratio:1;border-radius:4px;background:${c}"></span>`).join('')}</div>
+    <div class="foot"><span class="pill" style="background:#15181d">Gerar com IA</span></div>`)
+};
+
+const projects = [
+  {k:"espeto",cat:"negocio",title:"Comandas do Espetinho No Ponto",type:"App para restaurante",year:"2026",
+   text:"App de comandas para um espetinho com atendimento muito rápido. O garçom anota o pedido e ele vai direto para quem prepara.",
+   tags:["Interface mobile","Fluxo de pedidos","Perfis de acesso"],
+   more:["Garçons usam o app sem a área de administrador.","Pedidos separados para o churrasqueiro (espetos) e para a cozinheira (jantinhas).","Botões grandes pensados para usar com uma mão, no meio do movimento."]},
+  {k:"perfil",cat:"negocio",title:"Perfil Lab",type:"Ferramenta para Instagram",year:"2026",
+   text:"A partir do @ de um cliente, o app melhora a foto de perfil e os primeiros posts com IA e mostra como o perfil vai ficar.",
+   tags:["Interface tecnológica","Integração com IA","Mockup de perfil"],
+   more:["Aba Resultado com o @, nome, bio e link sugeridos.","Comparação lado a lado entre o perfil original e o novo.","Feito para apresentar a proposta ao cliente na hora."]},
+  {k:"dinheiro",cat:"pessoal",title:"Meu Dinheiro",type:"App de finanças",year:"2026",
+   text:"Controle de gastos pessoais com categorias e visão rápida do saldo do mês.",
+   tags:["Dashboard","Categorias","Uso diário"],
+   more:["Tela inicial com o saldo em destaque.","Gastos agrupados por categoria com barras simples.","Registro de um gasto novo em poucos toques."]},
+  {k:"sistema",cat:"pessoal",title:"O Sistema",type:"App de hábitos gamificado",year:"2026",
+   text:"Rotina de treino em formato de missões diárias, com ranks e pontos, inspirada em interfaces de jogos.",
+   tags:["Gamificação","Visual de jogo","Progresso"],
+   more:["Missões com prazo até a meia-noite.","Ranks que sobem conforme a pessoa evolui.","Visual azul e escuro, como a tela de status de um game."]}
+];
+
+const skills = [
+  ["Design de interface (UI)","Telas, componentes e hierarquia visual para celular.",["Layout mobile","Tipografia","Cores","Ícones"]],
+  ["Experiência do usuário (UX)","Fluxos curtos para quem tem pouco tempo.",["Fluxos","Teste com usuários","Acessibilidade"]],
+  ["Protótipos com IA","Do rascunho a um app que roda, usando IA no processo.",["Claude","ChatGPT","HTML e CSS"]],
+  ["Design gráfico","Criativos para redes sociais, igrejas, eventos e marcas.",["Manipulação de imagem","Tipografia","Artes para Instagram","Cartazes de evento"]]
+];
+
+const bench = document.getElementById('bench');
+bench.innerHTML = [["dinheiro","p1"],["espeto","p2"],["sistema","p3"]].map(([k,c])=>screens[k].replace('class="phone"',`class="phone ${c}"`)).join('');
+
+const grid = document.getElementById('grid');
+grid.innerHTML = projects.map(p=>`<article class="card" data-cat="${p.cat}">
+  <div class="stage">${screens[p.k]}</div>
+  <div class="body">
+    <div class="meta"><span>${p.type}</span><span>${p.year}</span></div>
+    <h3>${p.title}</h3><p>${p.text}</p>
+    <div class="chips">${p.tags.map(t=>`<span>${t}</span>`).join('')}</div>
+    <details><summary>Ver detalhes</summary><ul>${p.more.map(m=>`<li>${m}</li>`).join('')}</ul></details>
+  </div></article>`).join('');
+
+document.getElementById('skills').innerHTML = skills.map(s=>`<div class="skill"><h3>${s[0]}</h3><p>${s[1]}</p><div class="chips">${s[2].map(t=>`<span>${t}</span>`).join('')}</div></div>`).join('');
+
+const words = ["Criativos para redes sociais","Interface mobile","Protótipos com IA","UX para atendimento rápido","Design gráfico","Gamificação","Apps para pequenos negócios"];
+document.getElementById('tick').innerHTML = [...words,...words].map(w=>`<span>${w}</span>`).join('');
+
+const btns = document.querySelectorAll('#projetos .filters button');
+btns.forEach(b=>b.addEventListener('click',()=>{
+  btns.forEach(x=>x.setAttribute('aria-pressed',x===b));
+  const f = b.dataset.f;
+  grid.querySelectorAll('.card').forEach(c=>{c.hidden = f!=='todos' && c.dataset.cat!==f;});
+}));
+
+
+const cre = [
+  {f:"01",w:1080,h:1350,cat:"igreja",t:"Projeto Avivamento",s:"Cartaz de evento da juventude",a:"Cartaz vermelho e laranja com a preletora ao centro e o título Projeto Avivamento"},
+  {f:"02",w:1080,h:1350,cat:"eventos",t:"Batalha do Metrô · Ianzin",s:"Cartaz de batalha de rima",a:"Cartaz roxo e verde de um MC com microfone entre semáforos, no terminal de metrô"},
+  {f:"03",w:1080,h:1350,cat:"igreja",t:"O castigo que nos traz a paz",s:"Congresso de Varões",a:"Cartaz escuro com seis pessoas de roupas laranja e título em letras grandes"},
+  {f:"04",w:1080,h:1350,cat:"manip",t:"Cartola",s:"Manipulação · Preciso me encontrar",a:"Colagem amarelada de um violonista de óculos escuros sobre um violão grande"},
+  {f:"05",w:1080,h:1350,cat:"manip",t:"Silvio Santos 1930–2024",s:"Manipulação · homenagem",a:"Colagem em azul e roxo de um apresentador sorrindo segurando cédulas de real"},
+  {f:"06",w:1080,h:1350,cat:"igreja",t:"Grande campanha de quarta",s:"Cartaz com versículo de Mateus 4:4",a:"Cartaz preto e amarelo com um pregador de microfone na mão e a palavra QUARTA ao fundo"},
+  {f:"07",w:1080,h:1920,cat:"igreja",t:"Hoje não haverá culto",s:"Aviso para stories",a:"Story com capacete de obra amarelo e fita de alerta avisando que o templo está em reforma"},
+  {f:"08",w:1080,h:1350,cat:"igreja",t:"Pequenos Adoradores",s:"Congresso das crianças",a:"Cartaz colorido infantil com três bonecos de fantoche em um cenário de árvore"},
+  {f:"09",w:1080,h:1350,cat:"manip",t:"Ramon Dino",s:"Manipulação · o dinossauro do Acre",a:"Fisiculturista em pose entre dois dinossauros em uma floresta"},
+  {f:"11",w:1080,h:1350,cat:"produto",t:"Embroidery Design Studio",s:"Patch bordado · imagem ilustrativa",a:"Patch bordado com a palavra BRASIL e um brasão sobre um suporte de madeira"}
+];
+const gal = document.getElementById('gal'), lb = document.getElementById('lb');
+gal.innerHTML = cre.map((c,i)=>`<button type="button" class="fig" data-i="${i}" data-cat="${c.cat}" aria-label="Ampliar: ${c.t}"><img src="img/${c.f}.jpg" width="${c.w}" height="${c.h}" alt="${c.a}" loading="lazy" decoding="async"><figcaption><b>${c.t}</b><span>${c.s}</span></figcaption></button>`).join('');
+let cur = 0;
+const vis = () => [...gal.querySelectorAll('.fig:not([hidden])')].map(b=>+b.dataset.i);
+function show(i){
+  cur = i; const c = cre[i];
+  const im = document.getElementById('lbi'); im.src = `img/${c.f}.jpg`; im.alt = c.a;
+  document.getElementById('lbt').textContent = c.t; document.getElementById('lbs').textContent = c.s;
+}
+function step(d){ const v = vis(), k = v.indexOf(cur); show(v[(k+d+v.length)%v.length]); }
+gal.addEventListener('click',e=>{ const b = e.target.closest('.fig'); if(!b) return; show(+b.dataset.i); lb.showModal(); });
+document.getElementById('lbx').addEventListener('click',()=>lb.close());
+document.getElementById('lbp').addEventListener('click',()=>step(-1));
+document.getElementById('lbn').addEventListener('click',()=>step(1));
+lb.addEventListener('click',e=>{ if(e.target===lb) lb.close(); });
+lb.addEventListener('keydown',e=>{ if(e.key==='ArrowLeft') step(-1); if(e.key==='ArrowRight') step(1); });
+const cbtns = document.querySelectorAll('#cf button');
+cbtns.forEach(b=>b.addEventListener('click',()=>{
+  cbtns.forEach(x=>x.setAttribute('aria-pressed',x===b));
+  const f = b.dataset.f;
+  gal.querySelectorAll('.fig').forEach(c=>{c.hidden = f!=='todos' && c.dataset.cat!==f;});
+}));
+
+const copy = document.getElementById('copy');
+copy.addEventListener('click',async()=>{
+  try{await navigator.clipboard.writeText(document.getElementById('mail').textContent);copy.textContent='Copiado!';}
+  catch(e){copy.textContent='Selecione e copie';}
+  setTimeout(()=>copy.textContent='Copiar',2000);
+});
+}
+</script>
+</body>
+</html>
