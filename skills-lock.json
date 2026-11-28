@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "skills": {
+    "landing-page": {
+      "source": "jezweb/claude-skills",
+      "commit": "1260fa7439b36b18dbf16648ccc7fb44783f6c23",
+      "sourceType": "github",
+      "skillPath": "plugins/frontend/skills/landing-page/SKILL.md",
+      "computedHash": "d29808a29c4e2ffabac1cc4c8625656e4994ccc76fda3f82b1ee920980e2bcf8"
+    }
+  }
+}
